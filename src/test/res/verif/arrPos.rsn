@@ -1,0 +1,17 @@
+fn makePositive(a : arr Int, idx : Int) -> Int require idx >= 0 && idx < #a{
+    return when a[idx] > 0 then a[idx] else 0;
+}
+
+fn main(args: arr String){
+    val a = [5,-11,27,0];
+
+    assert #a == 4;
+
+    var x = 0;
+
+    for var i = 0; i < #a; i+=1 invar i >= 0{
+        x += makePositive(a,i);
+    };
+
+    print(intToString(x));
+}

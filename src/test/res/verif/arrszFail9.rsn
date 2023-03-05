@@ -1,0 +1,40 @@
+
+fn max(a: Int, b: Int) -> Int {
+    return when a < b then b else a
+}
+
+fn min(a: Int, b: Int) -> Int {
+    return when a > b then b else a
+}
+
+fn maxAtIndex(a: arr Int, b: arr Int, idx: Int) -> Int require 0 <= idx && idx < min(#a, #b) {
+    return max(a[idx], b[idx])
+}
+
+fn main(args: arr String){
+
+    val a = [11, -5, 14, 21, 27];
+    val b = arr Int[27];
+
+    assert #a == 5;
+    assert #b == 27;
+
+    print(intToString(maxAtIndex(a, b, 3)));
+
+    var x = a;
+    assert 5 == #x;
+    x = b;
+    assert #x == #a;
+
+    val c = [0];
+
+    for var i = 0; i < #a; i += 1 invar i >= 0 invar #a + 10 < #b invar x == a || x == b invar #a == 5 {
+        a[i] = x[i] + b[i+10];
+        if i % 2 == 0 {
+            x = a;
+        } else {
+            x = when i % 5 == 0 then c else a;
+        };
+    };
+
+}

@@ -1,0 +1,9 @@
+
+fn foo(x: Int, y: Int) -> Int
+require x >= 0
+require y >= 0
+{
+    val t = 2*x + 1;
+    return t + y
+}
+ensure result >= 1

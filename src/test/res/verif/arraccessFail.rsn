@@ -1,0 +1,6 @@
+
+fn main(args: arr String){
+    val x = [15];
+    val y = [15, 2];
+    assert x[0] == y[0];    // expected to fail because not supported
+}

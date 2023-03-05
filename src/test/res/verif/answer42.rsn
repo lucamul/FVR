@@ -1,0 +1,4 @@
+
+fn theAnswerToEverything() -> Int {
+    return 42
+} ensure result > 40 && result < 45

@@ -1,0 +1,14 @@
+
+fn min0(a: Int, b: Int) -> Int {
+    return when b < a then b else a
+}
+
+fn min(a: Int, b: Int) -> Int {
+    var r = 0;
+    if a < b-1 {
+        r = a;
+    } else {
+        r = b
+    };
+    return r;
+} ensure result == min0(a, b)

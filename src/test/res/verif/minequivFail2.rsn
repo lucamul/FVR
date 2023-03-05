@@ -1,0 +1,11 @@
+
+fn min0(a: Int, b: Int) -> Int {
+    return when b < a then b else a
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        return b
+    };
+    return a;
+} ensure result == min0(a, b)

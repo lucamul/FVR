@@ -1,0 +1,16 @@
+
+fn testFunc(x: String, y: String, counter: arr Int) -> String {
+    assert #x == #y;
+    var s = "";
+    var c = 'A' as Int;
+    var i = 0;
+    var j = 10;
+    while #s < #x invar j > i {
+        s += charToString(c as Char);
+        c += 1;
+        i += 1;
+        j -= 2;
+        counter[0] += 1;
+    };
+    return s
+}

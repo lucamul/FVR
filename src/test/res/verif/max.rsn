@@ -1,0 +1,6 @@
+
+fn max(a: Int, b: Int) -> Int {
+    return when a < b then b else a
+}
+ensure result >= a
+ensure result >= b

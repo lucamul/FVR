@@ -1,0 +1,16 @@
+
+fn bar(x: Int) -> Int
+require x >= 2
+require x % 5 == 0
+{
+    var y = x;
+    while (y < 48) invar y % 5 == 0 {
+        y += 5;
+    };
+    return y;
+} ensure result % 5 == 0
+
+fn foo(){
+    val abc = 20;
+    print(intToString(bar(abc)))
+}

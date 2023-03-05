@@ -1,0 +1,37 @@
+
+
+fn avg1(x: Int, y: Int) -> Int {
+    return (x + y) / 2
+}
+
+fn avg2(x: Int, y: Int) -> Int {
+    val lowest = min(x, y);
+    val highest = max(x, y);
+    var low = lowest;
+    var high = highest;
+    while low <= high-2
+        invar low-lowest == highest-high
+        invar lowest == min(x, y)
+        invar highest == max(x, y)
+        invar low >= lowest
+        invar high <= highest
+        invar low <= high
+    {
+        low += 1;
+        high -= 1;
+    };
+    return low
+} ensure result == avg1(x, y)
+
+fn max(a: Int, b: Int) -> Int {
+    return when a < b then b else a
+}
+
+fn min(a: Int, b: Int) -> Int {
+    return when b < a then b else a
+}
+
+fn abs(a: Int) -> Int {
+    return when a < 0 then -a else a
+}
+

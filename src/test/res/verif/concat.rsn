@@ -1,0 +1,26 @@
+
+fn concat(l: arr Int, r: arr Int) -> arr Int {
+    val length = #l + #r;
+    val concat = arr Int[length];
+    var k = 0;
+    for ; k < #l; k += 1  invar #concat == #l + #r invar k >= 0 invar k <= #l {
+        concat[k] = l[k];
+    };
+    assert k == #l;
+    for var m = 0; m < #r; m += 1, k += 1  invar (m <= #concat || #r == 0) invar #concat == #l + #r invar k >= 0 invar m >= 0 invar k == #l + m {
+        concat[k] = r[m];
+    };
+    return concat
+} ensure #result - #l == #r
+
+fn main(args: arr String){
+    val right = arr Int[7];
+    for var i = 0; i < #right; i += 1 invar i >= 0 invar #right == 7 {
+        right[i] = 2*i;
+    };
+    val left = [12, 89, 25, 11];
+    val doubleLeft = concat(left, left);
+    val foo = concat(left, right);
+    assert #foo == 11;
+    assert #doubleLeft == 2*#left;
+}

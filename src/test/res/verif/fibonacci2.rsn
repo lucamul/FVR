@@ -1,0 +1,7 @@
+
+fn fib(n: Int) -> Int require n >= 0 {
+    if (n < 0){
+        panic "argument of fib must be nonnegative"
+    };
+    return when n <= 1 then n else fib(n-1) + fib(n-2)
+} ensure result >= 0

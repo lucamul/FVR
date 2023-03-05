@@ -1,0 +1,8 @@
+
+fn prod(x: Int, y: Int) -> Int require x >= 1 && y >= 1 {
+    return x*y
+} ensure result >= max(x, y)
+
+fn max(a: Int, b: Int) -> Int {
+    return when a < b then b else a
+}

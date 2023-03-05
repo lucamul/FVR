@@ -1,0 +1,10 @@
+
+fn idArr(a: arr Int) -> arr Int {
+    return a
+}
+
+fn main(args: arr String){
+    val x = [0];
+    val y = idArr(x);
+    assert x == y;
+}

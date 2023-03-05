@@ -1,0 +1,34 @@
+
+struct Vertex {
+    x: Double,
+    y: Double
+}
+
+struct Rectangle {
+    upperLeftCorner: Vertex,
+    width: Double,
+    height: Double
+}
+
+fn computeArea(rectangle: Rectangle) -> Double {
+    return rectangle.width * rectangle.height
+}
+
+// creates the rectangles described by rectDims (leftUpperX, leftUpperY, width, height) and returns them
+// fills 'areas' with their areas
+fn createRectangles(rectDims: arr Double, areas: arr Double) -> arr Rectangle {
+    if #rectDims % 4 != 0 {
+        panic "length of rectDims should be a multiple of 4"
+    };
+    val rectangles = arr Rectangle[#rectDims / 4];
+    var i = 0;
+    for ; i < #rectDims; i += 4 {
+        rectangles[i / 4] = new Rectangle { new Vertex { rectDims[i], rectDims[i + 1] }, rectDims[i + 2], rectDims[i + 3] }
+    };
+    for i = 0; i < #rectangles; i += 1 {
+        areas[i] = computeArea(rectangles[i])
+    };
+    return rectangles
+}
+
+

@@ -1,0 +1,4 @@
+
+fn square(x: Int) -> Int {
+    return x*x
+} ensure result >= 0

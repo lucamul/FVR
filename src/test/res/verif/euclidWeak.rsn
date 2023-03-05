@@ -1,0 +1,19 @@
+
+fn gcd(x: Int, y: Int) -> Int require x > 0 require y > 0 {
+    var a = x;
+    var b = y;
+    while a != b invar a > 0 invar b > 0 {
+        if a > b {
+            a -= b
+        } else {
+            b -= a
+        }
+    };
+    return a
+} ensure result > 0
+
+fn main(args: arr String){
+    print(intToString(gcd(360, 105)))
+}
+
+

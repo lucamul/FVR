@@ -1,0 +1,18 @@
+
+fn fib(n: Int) -> Int require n >= 0 {
+    if n <= 1 {
+        return n;
+    };
+    var prev = 0;
+    var curr = 1;
+    for var i = 2; i <= n; i += 1 invar curr > 0 invar prev >= 0 {
+        val next = prev + curr;
+        prev = curr;
+        curr = next;
+    };
+    return curr;
+} ensure result >= 0
+
+fn main(args: arr String){
+    print(intToString(fib(10)))
+}

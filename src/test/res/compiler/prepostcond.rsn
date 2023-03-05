@@ -1,0 +1,23 @@
+
+
+fn isMaxInArray(xs: arr Int, idx: Int) -> String
+require idx >= 0
+require idx < #xs
+{
+    for var i = 0; i < #xs; i += 1 {
+        if i == idx {
+            i += 1;
+            return "Hey I'm a bug!"
+        };
+        if xs[i] > xs[idx] {
+            return "no"
+        }
+    };
+    return "yes"
+}
+ensure result == "yes" || result == "no"
+
+
+fn testF(array: arr Int, idx: Int) -> String {
+    return isMaxInArray(array, idx)
+}

@@ -1,0 +1,19 @@
+
+fn tenthElem(seq: arr Bool) -> Int require #seq >= 10 {
+    return when seq[9] then 1 else 0
+}
+
+fn main(args: arr String){
+
+    print(intToString(tenthElem([true, true, true, false, true, true, false, true, true, false])));
+
+    val t = 25;
+    val x = arr Bool[t];
+    for var j = 0; j < t; j += 1 invar j >= 0 invar j <= #x invar #x == t invar t == 25 {
+        x[j] = j % 3 == 0 || j % 5 == 0;
+    };
+    if tenthElem(x) == 1 {
+        print("Hello")
+    };
+
+}

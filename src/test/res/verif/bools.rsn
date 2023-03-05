@@ -1,0 +1,16 @@
+
+fn baz(a: Bool, b: Bool, c: Bool) -> Bool {
+    if (a == b){
+        if (c == a && (a == b == c)){
+            return c;
+        } else {
+            return true;
+        }
+    } else {
+        if (a && b){
+            panic "should not happen"
+        };
+        return (a || b) && !(a && b)
+    }
+} ensure result
+

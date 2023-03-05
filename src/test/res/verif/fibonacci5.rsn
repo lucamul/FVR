@@ -1,0 +1,48 @@
+
+fn fib(n: Int) -> Int require n >= 0 {
+    if n <= 1 {
+        return n
+    };
+    return fibRec(n, 2, 0, 1)
+} ensure result >= 0
+
+fn fibRec(n: Int, i: Int, prev: Int, curr: Int) -> Int require n >= 0 require prev >= 0 require curr > 0 {
+    if i <= n {
+        val next = prev + curr;
+        return fibRec(n, i+1, curr, next);
+    } else {
+        return curr
+    }
+} ensure result >= 0
+
+fn main(args: arr String) unchecked -> Void {
+    val last = 25;
+    var s1 = "";
+    var s2 = "";
+    for var i = 0; i <= last; i += 1 {
+        val iStr = intToString(i);
+        val fStr = intToString(fib(i));
+        val n = max(#iStr, #fStr);
+        s1 += formatNChars(iStr, n);
+        s2 += formatNChars(fStr, n);
+        if i < last {
+            s1 += " | ";
+            s2 += " | ";
+        };
+    };
+    print(s1 + "\n");
+    print(s2)
+}
+
+fn formatNChars(s: String, n: Int) -> String require n >= 1 {
+    var r = s;
+    while #r < n {
+        r = " " + r;
+    };
+    return r;
+}
+
+fn max(a: Int, b: Int) -> Int {
+    return when b > a then b else a;
+}
+

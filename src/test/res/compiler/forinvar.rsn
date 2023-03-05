@@ -1,0 +1,10 @@
+
+fn bar(ys: String, x: Int, counter: arr Int) -> Char {
+    var s = 0;
+    val chars = toCharArray(ys);
+    var i = 0;
+    for ; i < x; i += 1, counter[0] += 1 invar i < #ys invar s >= 0 {
+        s += chars[i] as Int;
+    };
+    return chars[s % i]
+}

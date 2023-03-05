@@ -1,0 +1,19 @@
+
+fn foo(x: Int, y: Int) -> Int
+require x > y
+require x > 0
+{
+    var a = -10;
+    val b = 1 + 1;
+    assert b > a;
+    while a < 25 invar a % 2 == 0 {
+        a += b*(x-y)
+    };
+    return a
+}
+ensure result > 24
+
+
+fn testF() -> Int {
+    return foo(30, 20)
+}
